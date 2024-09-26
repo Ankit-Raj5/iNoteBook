@@ -1,10 +1,5 @@
 import mongoose from "mongoose";
-const mongoUri = "";
-const connectToMongo = () =>{
-    console.log("object")
-    mongoose.connect(mongoUri, ()=>{
-        console.log("Connected to MongoDB");
-    });
-}
-
-export default connectToMongo;
+const mongoUri = "mongodb://localhost:27017/i-NoteBook";
+export const connect = async () => {
+  await mongoose.connect(mongoUri);
+};
