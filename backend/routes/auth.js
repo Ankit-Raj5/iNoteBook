@@ -76,7 +76,7 @@ router.post(
       if (!passwordCompare) {
         return res.status(400).json({ error: "Incorrect password" });
       }
-      const authtoken = jwt.sign({ user: { _id: user._id.toString() } }, JWT_SECRET, { expiresIn: "12h" });
+      const authtoken = jwt.sign({ user: { _id: user._id.toString() } }, JWT_SECRET, { expiresIn: "24d" });
       res.json(authtoken);
     } catch (error) {
       console.error(error.message);
